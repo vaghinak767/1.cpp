@@ -1,12 +1,12 @@
 #include <iostream>
 int main(){
     int size=0, target=0, left = 0;
-    std::cout<<"Input size of array";
+    std::cout<<"Input size of array ";
     std::cin>>size;
-    std::cout<<"Input your target";
+    std::cout<<"Input your target ";
     std::cin>>target;
     int* arr = new int[size];
-    std::cout<<"Input array's elements";
+    std::cout<<"Input array's elements ";
     for (int i = 0; i < size; i++)
     {
         std::cin>>arr[i];
