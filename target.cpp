@@ -8,8 +8,10 @@ int main(){
         std::cin>>arr[i];
     }
     int right = size-1;
+    int mid;
     for (int i = 0; i < size; i++)
-    {int mid = (right + left)/2;
+    {
+        mid = (right + left)/2;
         if(arr[mid]>target){
             left--;
         }
