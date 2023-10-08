@@ -1,0 +1,50 @@
+#include <iostream>
+struct Student{
+    int arrOfStudent[3];
+    std::string name;
+};
+void swap(int& a, int&  b){
+    int c=b;
+    b=a;
+    a=c;
+}
+int main(){
+    Student arr[3];
+    int midScore1=0;
+    int midScore2=0;
+    int midScore3=0;
+    int midScore=0;
+    for(int i=0; i<3; i++){
+        std::cout<<"Enter the scores of first student ";
+        for(int j=0; j<3; j++){
+        std::cin>>arr[i].arrOfStudent[j];}
+        std::cout<<"Enter the name of first student ";
+        std::cin>>arr[i].name;
+        i+=1;
+        std::cout<<"Enter the scores of second student ";
+        for(int j=0; j<3; j++){
+        std::cin>>arr[i].arrOfStudent[j];}
+        std::cout<<"Enter the name of second student ";
+        std::cin>>arr[i].name;
+        i+=1;
+        std::cout<<"Enter the scores of third student ";
+         for(int j=0; j<3; j++){
+        std::cin>>arr[i].arrOfStudent[j];}
+        std::cout<<"Enter the name of first student ";
+        std::cin>>arr[i].name;
+    } 
+    for(int i=0; i<3; i++){
+        midScore1+=arr[0].arrOfStudent[i];
+    }
+    for(int i=0; i<3; i++){
+        midScore2+=arr[1].arrOfStudent[i];
+    }
+    for(int i=0; i<3; i++){
+        midScore3+=arr[2].arrOfStudent[i];
+}
+int arr1[3]={midScore1, midScore2, midScore3};
+if(arr1[0]<arr1[1])
+swap(arr1[0], arr1[1]);
+if(arr1[1]<arr1[2])
+swap(arr1[1], arr1[2]);
+}
