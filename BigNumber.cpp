@@ -88,10 +88,13 @@ void BigNumberSubtraction(int* Number1, int* Number2, int* result, int n){
 int main(){
     int n=0;
     std::cin>>n;
+    std::cout<<"Please enter the count of digits";
     int* Number1 = new int[n];
+    std::cout<<"Please enter the digits of first number";
     for(int i=0; i<n; ++i){
         std::cin>>Number1[i];
     }
+    std::cout<<"Please enter the digits of second number";
     int* Number2 = new int[n];
     for(int i=0; i<n; ++i){
         std::cin>>Number2[i];
