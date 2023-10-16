@@ -21,6 +21,7 @@ void BigNumberAdd(int* Number1, int* Number2, int* result, int n){
     }*/
 }
 void BigNumberMultipy(int* Number1, int* Number2, int* result, int n){
+    int a=0;
     int m=2*n-1;
     for(int k=n-1; k>=0; --k){
         
@@ -31,7 +32,10 @@ void BigNumberMultipy(int* Number1, int* Number2, int* result, int n){
             }
             if(result[j]>=0){
                 result[j-1]+=(result[j]/10);
-                result[j]+=(result[j]%10);
+		a=result[j];
+		result[j]=0;
+                result[j]=(a%10);
+		
             }   
     }
     --m;
