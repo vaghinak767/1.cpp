@@ -21,7 +21,7 @@ int main(){
     int n = 0;
     int target = 0;
     std::cin >> n >> target;
-    int *arr = new int[];
+    int *arr = new int[n];
     for(int i = 0; i < n; ++i){
         std::cin >> arr[i];
     }
