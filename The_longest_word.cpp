@@ -35,12 +35,13 @@ int main()
     char *arr = new char[n + 1];
     std::cin.get();
     std::cin.getline(arr, n);
-    const_cast<const char *>(arr);
+    const char *ptr = const_cast<const char *>(arr);
     int index = index1(arr);
-    while ((arr[index] >= 65 && arr[index] <= 90) || (arr[index] >= 97 && arr[index] <= 122))
+    while ((arr[index] >= 'A' && arr[index] <= 'Z') || (arr[index] >= 'a' && arr[index] <= 'z'))
     {
         std::cout << arr[index];
         ++index;
     }
     std::cout << std::endl;
+    delete[] arr;
 }
