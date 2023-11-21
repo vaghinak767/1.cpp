@@ -20,7 +20,7 @@ int main(){
     std::cin >> n >> m;
     int **arr = new int*[n];
     for(int i = 0; i < n; ++i){
-        *arr = new int[m];
+        arr[i] = new int[m];
     }
     for(int i = 0; i < n; ++i){
         for(int j = 0; j < m; ++j){
