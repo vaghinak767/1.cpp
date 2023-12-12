@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef LIBRARYBOOK_H
+#define LIBRARYBOOK_H
 #include <iostream>
 #include <string>
 class LibraryBook
