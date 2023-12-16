@@ -51,18 +51,10 @@ int solution(int **matrix, int size, int size1)
     for (int j = 0; j < size1; ++j)
     {
         int i = 0;
-        if (matrix[i][j] != 0)
+        while ((i < size) && (matrix[i][j] != 0))
         {
-            while (i < size)
-            {
-                if (matrix[i][j] != 0)
-                {
-                    sum += matrix[i][j];
-                }
-                else
-                    break;
-                ++i;
-            }
+            sum += matrix[i][j];
+            ++i;
         }
     }
     return sum;
