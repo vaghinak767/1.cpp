@@ -71,7 +71,8 @@ int sol(int **arr, int size, int size1)
             {
                 arr[i + 1][j] = 0;
             }
-            sum += arr[i][j];
+            else
+                sum += arr[i][j];
         }
     }
     return sum;
