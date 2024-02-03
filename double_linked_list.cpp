@@ -33,6 +33,11 @@ List::List(const List& other)
 
 const List& List::operator=(const List& other)
 {
+    if(this == &other)
+    {
+        return *this;
+    }
+    this->clear();
     this->head = other.head;
     Node* tmp = other.head;
     while(tmp->next != nullptr)
@@ -66,6 +71,7 @@ List::List(List&& other)
 
 const List& List::operator=(List&& other)
 {
+    this->clear();
     this->head = other.head;
     Node* tmp = head;
     while(tmp->next != nullptr)
@@ -104,4 +110,16 @@ void List::push_back(int el)
     ob->next = nullptr;
     ob->data = el;
     tail = ob;  
+}
+
+void List::clear()
+{
+    while(tail->previous != nullptr)
+    {
+        Node *tmp = tail;
+        tail = tail->previous;
+        delete[]tmp;
+    }
+    tail = nullptr;
+    head = nullptr;
 }
