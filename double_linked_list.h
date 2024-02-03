@@ -11,7 +11,8 @@ struct List
         const List& operator=(List&& other);
         bool empty();
         void push_back(int el);
-        void push_front(int el)
+        void push_front(int el);
+        void clear();
     private:
         Node *head = nullptr;
         Node *tail = nullptr;
