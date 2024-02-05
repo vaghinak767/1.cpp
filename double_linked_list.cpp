@@ -33,11 +33,6 @@ List::List(const List& other)
 
 const List& List::operator=(const List& other)
 {
-    if(this == &other)
-    {
-        return *this;
-    }
-    this->clear();
     this->head = other.head;
     Node* tmp = other.head;
     while(tmp->next != nullptr)
@@ -71,7 +66,6 @@ List::List(List&& other)
 
 const List& List::operator=(List&& other)
 {
-    this->clear();
     this->head = other.head;
     Node* tmp = head;
     while(tmp->next != nullptr)
@@ -85,6 +79,7 @@ const List& List::operator=(List&& other)
     this->tail = other.tail;
     other.head = nullptr;
     other.tail = nullptr;
+    return *this;
 }
 
 bool List::empty()
@@ -104,22 +99,35 @@ void List::push_back(int el)
         tail = ob;
         head = ob;
         ob->data = el;
+        return;
+        std::cout << el << "---" << std::endl;
     }
     Node* ob = new Node;
-    ob->previous = tail->next;
-    ob->next = nullptr;
     ob->data = el;
+    Node* tmp = tail;
+    Node* ptr = nullptr;
+    while(tmp != nullptr && tmp->data > ob->data)
+    {
+        ptr = tmp;
+        tmp =  tmp->small;
+        std::cout << el << "---" << std::endl;
+    }
+    ob->great = ptr;
+    ob->small = tmp;
+    if(tmp != nullptr)
+        tmp->great = ob;
+    ob->previous = tail;
+    ob->next = nullptr;
     tail = ob;  
 }
 
-void List::clear()
+void List::dis()
 {
-    while(tail->previous != nullptr)
+    Node* tmp = head;
+    while(tmp->great != nullptr)
     {
-        Node *tmp = tail;
-        tail = tail->previous;
-        delete[]tmp;
+        std::cout << tmp->data << " ";
+        tmp = tmp->great;
     }
-    tail = nullptr;
-    head = nullptr;
+    std::cout << std::endl;
 }
