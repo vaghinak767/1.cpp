@@ -8,6 +8,8 @@ struct Node
         int data;
         Node *next;
         Node *previous;
+        Node *great;
+        Node *small;
 };
 
 #endif
